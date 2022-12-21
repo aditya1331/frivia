@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frivia/Provider/Home_page_provider.dart';
+import 'package:Frivia/Provider/Home_page_provider.dart';
 import 'package:provider/provider.dart';
 
 

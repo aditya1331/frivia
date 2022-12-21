@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
-import 'package:frivia/Pages/main_screen.dart';
+import 'package:Frivia/Pages/main_screen.dart';
 
 //the extension changeNotifier helps to keep track of the changes that occur within the class
 class HomePageProvider extends ChangeNotifier {
