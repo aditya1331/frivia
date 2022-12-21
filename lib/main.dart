@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frivia/Pages/game_page.dart';
+import 'package:frivia/Pages/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Color.fromRGBO(31, 31, 31, 1.0),
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: main_screen(),
     );
   }
 }

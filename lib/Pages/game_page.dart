@@ -2,17 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:frivia/Provider/Home_page_provider.dart';
 import 'package:provider/provider.dart';
 
+
 class HomePage extends StatelessWidget {
   double? _deviceHeight, _deviceWidth;
+  String? diff;
 
   HomePageProvider? _pageProvider;
-
+  HomePage(this.diff)
+  {
+    this.diff = diff;
+  }
   @override
   Widget build(BuildContext context) {
     _deviceHeight = MediaQuery.of(context).size.height;
     _deviceWidth = MediaQuery.of(context).size.width;
     return ChangeNotifierProvider(
-      create: (_context) => HomePageProvider(context: context),
+      create: (_context) => HomePageProvider(context: context, difficulty_level: diff),
       child: _buildUI(),
     );
   }
