@@ -30,4 +30,10 @@ class HomePageProvider extends ChangeNotifier {
   String getCurrentQuestionText() {
     return questions![_currentQuestion]["question"];
   }
+  void answerQuestion(String _answer )async{
+    bool isCorrect = questions![_currentQuestion]["correct_answer"]==_answer;
+    _currentQuestion++;
+    print(isCorrect?"Correct!" : "Incorrect");
+    notifyListeners();
+  }
 }
