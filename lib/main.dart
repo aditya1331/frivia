@@ -14,16 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Frivia',
       theme: ThemeData(
-       fontFamily: 'ArchitectsDaughter',
-        scaffoldBackgroundColor: Colors.black54,
-
+        fontFamily: 'ArchitectsDaughter',
+        scaffoldBackgroundColor: Color.fromRGBO(31, 31, 31, 1.0),
         primarySwatch: Colors.blue,
       ),
       home: HomePage(),
     );
   }
-
-
-
 }
-

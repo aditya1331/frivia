@@ -30,10 +30,24 @@ class HomePageProvider extends ChangeNotifier {
   String getCurrentQuestionText() {
     return questions![_currentQuestion]["question"];
   }
-  void answerQuestion(String _answer )async{
-    bool isCorrect = questions![_currentQuestion]["correct_answer"]==_answer;
+
+  void answerQuestion(String _answer) async {
+    bool isCorrect = questions![_currentQuestion]["correct_answer"] == _answer;
     _currentQuestion++;
-    print(isCorrect?"Correct!" : "Incorrect");
+    showDialog(
+        context: context,
+        builder: (BuildContext _context) {
+          return AlertDialog(
+            backgroundColor: isCorrect ? Colors.green : Colors.red,
+            title: Icon(
+              isCorrect ? Icons.check_circle : Icons.cancel_sharp,
+              color: Colors.white,
+            ),
+          );
+        });
+    await Future.delayed(Duration(
+        seconds: 1)); //Delaying the notifier for 1 second and closing it
+    Navigator.pop(context);
     notifyListeners();
   }
 }
